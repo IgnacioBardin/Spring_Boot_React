@@ -3,7 +3,6 @@ package com.example.spring_boot_jwt.security.service;
 import com.example.spring_boot_jwt.model.User;
 import com.example.spring_boot_jwt.repository.UserRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

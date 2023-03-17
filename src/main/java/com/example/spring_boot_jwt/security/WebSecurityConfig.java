@@ -1,5 +1,6 @@
 package com.example.spring_boot_jwt.security;
 
+
 import com.example.spring_boot_jwt.security.jwt.AuthEntryPointJwt;
 import com.example.spring_boot_jwt.security.jwt.AuthTokenFilter;
 import com.example.spring_boot_jwt.security.service.UserDetailsServiceImpl;
@@ -19,10 +20,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableMethodSecurity
 public class WebSecurityConfig {
-
+    final
     UserDetailsServiceImpl userDetailsService;
 
-    private AuthEntryPointJwt unauthorizedHandler;
+    private final AuthEntryPointJwt unauthorizedHandler;
+
+    public WebSecurityConfig(UserDetailsServiceImpl userDetailsService, AuthEntryPointJwt unauthorizedHandler) {
+        this.userDetailsService = userDetailsService;
+        this.unauthorizedHandler = unauthorizedHandler;
+    }
 
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
